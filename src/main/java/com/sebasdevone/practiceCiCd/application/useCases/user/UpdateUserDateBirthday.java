@@ -22,6 +22,7 @@ public class UpdateUserDateBirthday implements UpdateUserDateBirthdayUseCase {
     @Override
     public UserUpdatedDto execute(String id, LocalDate dateOfBirth) {
         User user = userRepositoryPort.findById(UUID.fromString(id));
-        return user.updateDateOfBirth(dateOfBirth);
+        user.updateDateOfBirth(dateOfBirth);
+        return userDtosMapper.toUserUpdatedDto(userRepositoryPort.save(user));
     }
 }
