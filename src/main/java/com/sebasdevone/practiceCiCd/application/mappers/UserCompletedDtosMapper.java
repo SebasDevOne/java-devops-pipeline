@@ -5,7 +5,7 @@ import com.sebasdevone.practiceCiCd.domain.entities.User;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
-public interface UserCompletedDtoMapper {
+public interface UserCompletedDtosMapper {
     UserCompletedDto toUserCompletedDto(User user);
     User toUser(UserCompletedDto userCompletedDto);
 }
